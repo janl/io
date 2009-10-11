@@ -6,6 +6,7 @@ function(doc, req) {
   doc.target = req.query.target;
 
   var shortio = function() {
+    /* Borrowed from Jason Davies */
     function generateSecret(length) {
       var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
       var secret = '';
