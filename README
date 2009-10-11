@@ -10,5 +10,13 @@ Get the redirect:
 
 http://127.0.0.1:5984/io/_design/io/_show/long/yvHa
 
-For maximum effect, deploy behind an HTTP proxy that aliases / to http://127.0.0.1:5984/io/_design/io/_show/long/
+For maximum effect, deploy behind an HTTP proxy that aliases / to 
+http://127.0.0.1:5984/io/_design/io/_show/long/
 
+--
+
+Go to http://127.0.0.1:5984/io/_design/io/_list/index/shorts to see a list of
+all shortened URLs.
+
+The list & view that power this make this > 30 LoC, but the updates/shorten.js
+and shows/long.js are still tight.
