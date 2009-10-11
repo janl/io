@@ -1,0 +1,14 @@
+Create a short:
+
+curl -X POST http://127.0.0.1:5984/io/_design/io/_update/shorten?target=http://zombo.com/
+
+You should see:
+
+  Shortened to yvHa
+
+Get the redirect:
+
+http://127.0.0.1:5984/io/_design/io/_show/long/yvHa
+
+For maximum effect, deploy behind an HTTP proxy that aliases / to http://127.0.0.1:5984/io/_design/io/_show/long/
+
