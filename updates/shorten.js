@@ -20,5 +20,5 @@ function(doc, req) {
 
   var shortened = shortio();
   doc._id = shortened;
-  return [doc, "Shortened to " + shortened + "\n"];
+  return [doc, "http://jan.io/" + shortened + "\n"];
 }
