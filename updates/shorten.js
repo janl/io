@@ -1,4 +1,6 @@
 function(doc, req) {
+  //!code vendor/date/date.js
+
   if(doc) {
     return [null, "You can't edit shorts"];
   }
@@ -20,5 +22,6 @@ function(doc, req) {
 
   var shortened = shortio();
   doc._id = shortened;
+  doc.date = (new Date()).rfc3339();
   return [doc, "http://jan.io/" + shortened + "\n"];
 }

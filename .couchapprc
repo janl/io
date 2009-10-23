@@ -1,1 +1,7 @@
-{}
+{
+  "env": { 
+    "default": {
+      "db": "http://jan:pr1nc0@raw.jan.io/io"
+    }
+  }
+}

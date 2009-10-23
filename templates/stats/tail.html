@@ -1,0 +1,55 @@
+  </ul>
+  <script src="/_utils/script/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/_utils/script/json.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/_utils/script/jquery.couch.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(function($) {
+      var db = $.couch.db("log");
+      db.view("couchstats/stats", {
+        group: true,
+        success: function(result) {
+          result.rows.forEach(function(elm) {
+            var id = elm.key;
+            var hits = elm.value;
+            $("#" + id).prepend("<span> " + hits + "</span> ");
+          });
+        }
+      });
+      db.view("couchstats/stats", {
+        success: function(result) {
+          var total = result.rows[0].value || 0;
+          $("#total span").append(total);
+        }
+      });
+
+    });
+  </script>
+  <style type="text/css" media="screen">
+
+    body {
+      font-family:"Minion Pro";
+    }
+
+    h1 {
+      width:90%;
+      margin:1ex auto 0 auto;
+    }
+
+    ul {
+      margin:4ex auto 0 auto;
+    }
+    
+    li {
+      list-style: none;
+    }
+
+    span {
+      font-style:italic;
+      display:inline-block;
+      width:2em;
+      text-align:right;
+    }
+    
+  </style>
+</body>
+</html>
