@@ -8,6 +8,7 @@ function(head, req) {
     while(row = getRow()) {
       send(Mustache.to_html(templates.stats.row, {
         target: row.value,
+        shortened: row.id,
         date: row.key,
         id: row.id
       }));
