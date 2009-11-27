@@ -1,6 +1,8 @@
 function(doc, req) {
   //!code vendor/date/date.js
-
+  //!code vendor/qrcode-js/QRCode.js
+  //!code vendor/qrcode-js-client/client.js
+  
   if(doc) {
     return [null, "You can't edit shorts"];
   }
@@ -23,5 +25,6 @@ function(doc, req) {
   var shortened = shortio();
   doc._id = shortened;
   doc.date = (new Date()).rfc3339();
+  doc.qr = make_qr_code(doc.target);
   return [doc, "http://jan.io/" + shortened + "\n"];
 }
