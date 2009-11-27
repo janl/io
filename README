@@ -2,7 +2,7 @@ The cool stuff happens in updates/shorten.js and shows/long.js
 
 Create a short:
 
-curl -X POST http://127.0.0.1:5984/io/_design/io/_update/shorten?target=http://zombo.com/
+    curl -X POST http://127.0.0.1:5984/io/_design/io/_update/shorten?target=http://zombo.com/
 
 You should see:
 
@@ -10,7 +10,7 @@ You should see:
 
 Get the redirect:
 
-http://127.0.0.1:5984/io/_design/io/_show/long/yvHa
+    http://127.0.0.1:5984/io/_design/io/_show/long/yvHa
 
 For maximum effect, deploy behind an HTTP proxy that aliases / to 
 http://127.0.0.1:5984/io/_design/io/_show/long/
@@ -22,3 +22,12 @@ all shortened URLs.
 
 The list & view that power this make this > 30 LoC, but the updates/shorten.js
 and shows/long.js are still tight.
+
+--
+
+This branch also creates a HTML representation of a QRCode for the short URL.
+
+To view the QRCode, run:
+
+  curl http://127.0.0.1:5984/io-qr/_design/io/_show/qr/HGW1
+
