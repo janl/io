@@ -1,9 +1,12 @@
 function(doc, req) {
+  // !json templates.index
+  // !code vendor/mustache.js/mustache.js
+  
   if(doc) {
     return [null, "You can't edit shorts"];
   }
   var doc = {};
-  doc.target = req.query.target;
+  doc.target = req.query.target || req.form.target;
 
   var shortio = function() {
     /* Borrowed from Jason Davies */
@@ -20,5 +23,5 @@ function(doc, req) {
 
   var shortened = shortio();
   doc._id = shortened;
-  return [doc, "http://jan.io/" + shortened + "\n"];
+  return [doc, templates.index.head + "http://localhost:5984/io/_design/io/_show/long/" + shortened + templates.index.tail];
 }
