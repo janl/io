@@ -1,0 +1,14 @@
+[
+  {
+    "from":"/new",
+    "to":"_update/shorten"
+  },
+  {
+    "from":"/:id",
+    "to":"_show/long/:id"
+  },
+  {
+    "from":"",
+    "to":"_show/long/"
+  }
+]

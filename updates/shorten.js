@@ -1,7 +1,8 @@
 function(doc, req) {
   // !json templates.index
   // !code vendor/mustache.js/mustache.js
-  
+  //!code vendor/date/date.js
+
   if(doc) {
     return [null, "You can't edit shorts"];
   }
@@ -23,5 +24,6 @@ function(doc, req) {
 
   var shortened = shortio();
   doc._id = shortened;
+  doc.date = (new Date()).rfc3339();
   return [doc, templates.index.head + "http://localhost:5984/io/_design/io/_show/long/" + shortened + templates.index.tail];
 }
