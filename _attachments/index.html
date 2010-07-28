@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>io — Personal URL Shortening</title>
+    <style type="text/css" media="screen">
+
+    body {
+      margin: 2ex auto 2ex auto;
+      width: 300px;
+    }
+
+    #wrap {
+      border: 1px solid #999;
+      width: 300px;
+      text-align: center;
+    }
+
+    li {
+      display:inline;
+      margin-right:2em;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div id="wrap">
+      <form action="_update/shorten" method="POST">
+        <p>
+          <label for="target">URL</label>
+          <input name="target" type="text" id="target"/>
+          <input type="submit" value="Create Short"/>
+        </p>
+      </form>
+      <ul>
+        <li><a href="/io/_design/io/_list/index/shorts">List of Shorts</a></li>
+      </ul>
+    </div>
+
+  </body>
+</html>
