@@ -1,6 +1,6 @@
 [
   {
-    "from":"/new",
+    "from":"/_update/shorten",
     "to":"_update/shorten"
   },
   {
@@ -9,6 +9,6 @@
   },
   {
     "from":"",
-    "to":"_show/long/"
+    "to":"index.html"
   }
 ]
