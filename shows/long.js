@@ -1,8 +1,9 @@
 function(doc, req) {
+  //!json templates
   if(!doc && !req.id) {
     return {
       code: 200,
-      body: "Hey there, this is <a href=\"http://twitter.com/janl\">@janl's</a> personal URL shortener. Make your own with <a href=\"http://github.com/janl/io\">io</a>."
+      body: templates.head + templates.form + templates.foot
     }
   }
 

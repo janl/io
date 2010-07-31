@@ -1,4 +1,5 @@
 function(doc, req) {
+  // !json templates
   // !code vendor/date/date.js
 
   if(doc) {
@@ -24,5 +25,10 @@ function(doc, req) {
   doc._id = shortened;
   doc.date = (new Date()).rfc3339();
   var shortlink = req.headers.Referer + shortened;
-  return [doc, "<a href=\"" + shortlink +"\">" + shortlink + "</a>"];
+
+  return [doc, 
+    templates.head
+    + "<a href=\"" + shortlink +"\">" + shortlink + "</a>",
+    + templates.foo
+  ];
 }
